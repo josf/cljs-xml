@@ -9,3 +9,4 @@ pom.xml
 .lein-plugins/
 /src/cljs_xml/sample.cljs~
 /.nrepl-port
+*~
