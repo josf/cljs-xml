@@ -8,7 +8,7 @@ This (totally experimental and barely a proof-of-concept) little
 library is an attempt to write something like
 [clojure.data.xml](https://github.com/clojure/data.xml) that will work
 in the browser. `data.xml` relies on Java's xml processing tools. This
-lib uses the DOM tools to parse documents.
+lib uses the browser's DOM APIs to parse documents.
 
 ## Setup
 
