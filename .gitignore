@@ -10,3 +10,6 @@ pom.xml
 /src/cljs_xml/sample.cljs~
 /.nrepl-port
 *~
+/*-init.clj
+/.repl/
+/.lein-failures
