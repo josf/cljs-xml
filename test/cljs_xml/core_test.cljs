@@ -16,3 +16,11 @@
         chils (xc/child-nodes top-el)]
     (is (seq? chils))
     (is (pos? (count chils)))))
+
+
+(deftest test-element
+  (let [dom (xc/dom-from-xml-string xs/tei)
+        top-el (.-documentElement dom)
+        elem (xc/parse-element top-el)]
+    (is (instance? cljs-xml.core/Element elem))
+    (is (= :TEI (:tag elem)))))
