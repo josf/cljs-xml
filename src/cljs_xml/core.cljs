@@ -18,10 +18,23 @@
 
 (declare parse-node)
 
+(defn get-attributes [attr-map]
+  (let [attr-count (.-length attr-map)]
+    (if (= 0 attr-count)
+      {}
+      (into {}
+        (map
+          (fn [idx]
+            (let [attr (.item attr-map idx)]
+              [(keyword (.-name attr)) (.-value attr)]))
+          (range attr-count))))))
+
 (defn parse-element [el]
-  (let [tagname (.-tagName el)]
+  (let [tagname (.-tagName el)
+        attributeMap (.-attributes el)]
     {:tag (keyword tagname)
-     :content (mapv parse-node (child-nodes el))}))
+     :content (mapv parse-node (child-nodes el))
+     :attrs (get-attributes (.-attributes el))}))
 
 (defn parse-text-node [t]
   (.-textContent t))
