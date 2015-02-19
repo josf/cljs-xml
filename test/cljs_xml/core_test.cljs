@@ -23,4 +23,6 @@
         top-el (.-documentElement dom)
         elem (xc/parse-element top-el)]
     (is (instance? cljs-xml.core/Element elem))
-    (is (= :TEI (:tag elem)))))
+    (is (= :TEI (:tag elem)))
+    (is (vector? (:content elem)))))
+
