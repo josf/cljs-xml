@@ -70,3 +70,8 @@
     
     true
     "blah"))
+
+
+(defn parse [doc]
+  "Parse a DOM document"
+  (parse-node (.-documentElement doc)))
