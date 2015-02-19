@@ -46,7 +46,7 @@
 (defn parse-element [el]
   (let [tagname (.-tagName el)
         attributeMap (.-attributes el)]
-    (element
+    (Element.
       (keyword tagname)
       (get-attributes (.-attributes el))
       (mapv parse-node (child-nodes el)))))
