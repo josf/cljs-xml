@@ -31,8 +31,6 @@
         nodecount (.-length nodelist)]
     (map #(.item nodelist %) (range nodecount))))
 
-
-
 (defn get-attributes [attr-map]
   (let [attr-count (.-length attr-map)]
     (if (= 0 attr-count)
@@ -60,7 +58,6 @@
   (xml-comment (.-data c)))
 
 (defn parse-node [nd]
-  (println (.-nodeType nd))
   (case (.-nodeType nd)
     1
     (parse-element nd)
